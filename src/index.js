@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={themeLight}>
       <Provider store={store}>
-        <BrowserRouter basename="goit-react-hw-07-phonebook">
+        <BrowserRouter basename="phonebook-by-hunt3r">
           <App />
         </BrowserRouter>
       </Provider>

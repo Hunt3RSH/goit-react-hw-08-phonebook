@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-07-phonebook",
+  "name": "phonebook-by-hunt3r",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hunt3rsh.github.io/goit-react-hw-07-phonebook/",
+  "homepage": "https://hunt3rsh.github.io/phonebook-by-hunt3r/",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
