@@ -2,7 +2,7 @@ import { StyledLabel } from 'components/ContactForm/ContactForm.styled';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from 'redux/authUsers/authOperations';
-import { Button, Col, Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { FormRegister } from './loginPage.styled';
 
 export const LoginPage = () => {
