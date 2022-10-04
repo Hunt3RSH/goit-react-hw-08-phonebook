@@ -6,7 +6,7 @@ import {
   CopyWrapper,
   FooterStyle,
 } from './Footer.styled';
-import LowSvg from '../../img/LowSvg.svg';
+import LowSvg from '../img/LowSvg.svg';
 const Footer = () => {
   return (
     <FooterStyle>

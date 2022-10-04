@@ -11,7 +11,7 @@ import {
 import { getToken } from 'redux/authUsers/authSelectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from 'redux/authUsers/authOperations';
-import logoBook from '../../img/logoBook.png';
+import logoBook from '../img/logoBook.png';
 
 export const Header = () => {
   const expand = 'md';
