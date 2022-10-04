@@ -11,7 +11,7 @@ import {
 import { getToken } from 'redux/authUsers/authSelectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from 'redux/authUsers/authOperations';
-import LogoBook from '../../img/logoBook.png';
+import logoBook from '../../img/logoBook.png';
 
 export const Header = () => {
   const expand = 'md';
@@ -28,7 +28,7 @@ export const Header = () => {
       >
         <StyledContainer fluid>
           <Navbar.Brand href="./phonebook-by-hunt3r">
-            <img src={LogoBook} alt="Logo" width={120} />
+            <img src={logoBook} alt="Logo" width={120} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
           <Navbar.Offcanvas
@@ -38,7 +38,7 @@ export const Header = () => {
           >
             <HeaderNavigationMobile closeButton closeVariant="white">
               <Navbar.Brand href="./phonebook-by-hunt3r">
-                <img src={LogoBook} alt="Logo" width={120} />
+                <img src={logoBook} alt="Logo" width={120} />
               </Navbar.Brand>
             </HeaderNavigationMobile>
             <BodyNavigation>
