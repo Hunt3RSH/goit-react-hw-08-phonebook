@@ -1,6 +1,9 @@
+import { StyledLabel } from 'components/ContactForm/ContactForm.styled';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from 'redux/authUsers/authOperations';
+import { Button, Col, Form } from 'react-bootstrap';
+import { FormRegister } from './loginPage.styled';
 
 export const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -29,26 +32,26 @@ export const LoginPage = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <FormRegister onSubmit={handleSubmit}>
+      <StyledLabel>
         Email:
-        <input
+        <Form.Control
           type="email"
           name="email"
           value={email}
           onChange={handleChange}
         />
-      </label>
-      <label>
+      </StyledLabel>
+      <StyledLabel>
         Password
-        <input
+        <Form.Control
           type="password"
           name="password"
           value={password}
           onChange={handleChange}
         />
-      </label>
-      <button>Login</button>
-    </form>
+      </StyledLabel>
+      <Button type="submit">Login</Button>
+    </FormRegister>
   );
 };

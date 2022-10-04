@@ -1,17 +1,25 @@
+import ContactForm from 'components/ContactForm/ContactForm';
 import { useSelector } from 'react-redux';
-import {
-  selectIsLoggedIn,
-  selectUserName,
-} from 'redux/authUsers/authSelectors';
+import { getToken, selectUserName } from 'redux/authUsers/authSelectors';
+import { HomeSubTitle, HomeTitle } from './HomePage.styled';
 
 export default function HomePage() {
-  const isLogin = useSelector(selectIsLoggedIn);
+  const isLogin = useSelector(getToken);
   const userName = useSelector(selectUserName);
 
   return (
     <>
-      <h1>Hi {userName}</h1>
-      {isLogin ? <p>Welcome.</p> : <p>Please, register or log in.</p>}
+      {isLogin ? (
+        <HomeTitle>Hi {userName}</HomeTitle>
+      ) : (
+        <HomeTitle>Welcome Stranger</HomeTitle>
+      )}
+      {isLogin ? (
+        <HomeSubTitle>Welcome back.</HomeSubTitle>
+      ) : (
+        <HomeSubTitle>Please, register or log in.</HomeSubTitle>
+      )}
+      {isLogin ? <ContactForm /> : null}
     </>
   );
 }

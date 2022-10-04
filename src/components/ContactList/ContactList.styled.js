@@ -1,3 +1,4 @@
+import { Card } from '@mui/material';
 import styled from 'styled-components';
 
 export const Title = styled.h2`
@@ -9,20 +10,16 @@ export const Title = styled.h2`
 `;
 
 export const ListContainer = styled.div`
+  margin-top: 30px;
+  margin-bottom: 30px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-`;
-
-export const ContactsListBody = styled.tbody``;
-
-export const ContactsItem = styled.tr`
-  &:nth-child(odd) {
-    background-color: #c2c2c247;
-  }
-  &:nth-child(even) {
-    background-color: #ecf1f3;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 4fr));
+  grid-gap: 15px;
+  margin: 0 auto;
+  list-style: none;
+  justify-content: center;
+  margin-top: 40px;
 `;
 
 export const TableName = styled.span`
@@ -32,4 +29,9 @@ export const TableName = styled.span`
   align-items: center;
   justify-content: center;
   line-height: 40px;
+`;
+
+export const CartStyle = styled(Card)`
+  width: 100%;
+  border-radius: 40px 10px 40px 10px !important;
 `;

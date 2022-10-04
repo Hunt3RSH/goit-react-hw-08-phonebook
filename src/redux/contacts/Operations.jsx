@@ -4,7 +4,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
 export const fetchContacts = createAsyncThunk(
-  'contacts/fetchContacts',
+  'contacts/',
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await axios.get('/contacts');
@@ -40,13 +40,16 @@ export const addContacts = createAsyncThunk(
 );
 
 export const updateContact = createAsyncThunk(
-  'contacts/updateContact',
-  async (contacts, { rejectWithValue }) => {
+  'update/updateContacts',
+  async (payload, thunkAPI) => {
     try {
-      await axios.put(`/contacts/${contacts.id}`);
-      return contacts;
-    } catch (error) {
-      return rejectWithValue(error);
+      const { id, ...data } = payload;
+      await axios.patch(`/contacts/${id}`, data);
+      return { ...payload };
+    } catch (err) {
+      return thunkAPI.rejectWithValue(
+        "Sorry, can't update contact, server Error!"
+      );
     }
   }
 );

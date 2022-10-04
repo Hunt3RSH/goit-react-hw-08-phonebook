@@ -12,10 +12,11 @@ const Footer = () => {
     <FooterStyle>
       <StyledContainer className="centerItem" fluid>
         <CopyWrapper>
-          © 2022 created by
+          created by
           <Copy href="https://github.com/Hunt3RSH" target="_blank">
             Hunt3R
           </Copy>
+           © 2022
         </CopyWrapper>
       </StyledContainer>
       <BackgroundWrapper>

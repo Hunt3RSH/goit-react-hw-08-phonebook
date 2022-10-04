@@ -2,9 +2,7 @@ import styled from 'styled-components';
 
 export const FooterStyle = styled.footer`
   padding-top: 0.5rem;
-  position: absolute;
   width: 100vw;
-  bottom: 0;
 `;
 
 export const CopyWrapper = styled.span`
@@ -17,9 +15,10 @@ export const CopyWrapper = styled.span`
 export const Copy = styled.a`
   text-decoration: none;
   margin-left: 5px;
+  color: #ffb21b;
   &:hover,
   &:focus {
-    color: red;
+    color: #ffc222;
   }
 `;
 export const BackgroundWrapper = styled.div`

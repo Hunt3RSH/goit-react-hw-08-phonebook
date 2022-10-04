@@ -1,4 +1,7 @@
+import { StyledLabel } from 'components/ContactForm/ContactForm.styled';
+import { FormRegister } from 'Page/LogInPage/loginPage.styled';
 import { useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/authUsers/authOperations';
 
@@ -34,30 +37,37 @@ export const SignUpPage = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input type="text" name="name" value={name} onChange={handleChange} />
-      </label>
-      <label>
-        Email:
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleChange}
-        />
-      </label>
-      <button>Register</button>
-    </form>
+    <>
+      <FormRegister onSubmit={handleSubmit}>
+        <StyledLabel>
+          Name
+          <Form.Control
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
+          />
+        </StyledLabel>
+        <StyledLabel>
+          Email
+          <Form.Control
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+          />
+        </StyledLabel>
+        <StyledLabel>
+          Password
+          <Form.Control
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+          />
+        </StyledLabel>
+        <Button type="submit">SingUP</Button>
+      </FormRegister>
+    </>
   );
 };

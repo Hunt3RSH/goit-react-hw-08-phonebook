@@ -1,4 +1,3 @@
-import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import { GlobalStyles } from 'utils/GlobalStyle';
 import { Routes, Route, Navigate } from 'react-router-dom';
@@ -11,38 +10,53 @@ import { SignUpPage } from 'Page/SingUpPage/SingUpPage';
 import { LoginPage } from 'Page/LogInPage/loginPage';
 import { fetchCurrentUser } from 'redux/authUsers/authOperations';
 import HomePage from 'Page/Home/HomePage';
+import ProtectedRoute from 'components/PrivateRoute';
+import PublicRoute from 'components/PublicRoute';
+import { fetchContacts } from 'redux/contacts/Operations';
 import { getToken } from 'redux/authUsers/authSelectors';
 
 const App = () => {
   const dispatch = useDispatch();
   const Lock = document.getElementById('MainBody');
   const loader = useSelector(getIsLoading);
-  const isUserLogin = useSelector(getToken);
+  const isLogin = useSelector(getToken);
 
   useEffect(() => {
-    dispatch(fetchCurrentUser());
-  }, [dispatch]);
+    if (isLogin) {
+      dispatch(fetchCurrentUser());
+      dispatch(fetchContacts());
+    }
+  }, [dispatch, isLogin]);
 
   return (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
           <Route
-            index
+            path="contacts"
             element={
-              <>
-                <HomePage />
-                <ContactForm />
-                {isUserLogin ? <LoginPage /> : null}
-              </>
+              <ProtectedRoute>
+                <ContactList />
+              </ProtectedRoute>
             }
           />
           <Route
-            path="contacts"
-            element={isUserLogin ? <ContactList /> : null}
+            path="login"
+            element={
+              <PublicRoute>
+                <LoginPage />
+              </PublicRoute>
+            }
           />
-          <Route path="login" element={<LoginPage />} />
-          <Route path="signup" element={<SignUpPage />} />
+          <Route
+            path="signup"
+            element={
+              <PublicRoute>
+                <SignUpPage />
+              </PublicRoute>
+            }
+          />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
