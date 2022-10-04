@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 import { Button, Col, Form } from 'react-bootstrap';
 import { StyledForm, StyledGroup, StyledLabel } from './ContactForm.styled';
 import { getContacts } from 'redux/contacts/selectors';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Title } from 'components/ContactList/ContactList.styled';
 import { addContacts } from 'redux/contacts/Operations';
@@ -53,7 +53,6 @@ const ContactForm = () => {
 
   return (
     <Col sm={true} className="centerItem">
-      <ToastContainer />
       <StyledForm onSubmit={handleFormSubmit}>
         <Title>Add new Contacts</Title>
         <StyledGroup>

@@ -1,8 +1,7 @@
-import { StyledContainer } from 'components/ContactForm/ContactForm.styled';
 import { Form } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
 import { getFilter } from 'redux/contacts/selectors';
-import { setFilter } from 'redux/contacts/slice';
+import { setFilter } from 'redux/contacts/contactsSlice';
 import { FilterLabel } from './Filter.styled';
 
 const Filter = () => {
@@ -10,7 +9,7 @@ const Filter = () => {
   const filter = useSelector(getFilter);
 
   return (
-    <StyledContainer className="mb-4">
+    <>
       <FilterLabel>
         Find contacts by name
         <Form.Control
@@ -22,7 +21,7 @@ const Filter = () => {
           required
         />
       </FilterLabel>
-    </StyledContainer>
+    </>
   );
 };
 

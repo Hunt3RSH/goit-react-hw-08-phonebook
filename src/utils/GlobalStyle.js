@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+
 export const GlobalStyles = createGlobalStyle`
 
 body {
@@ -9,8 +10,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
-  
+  color: white;
+
 }
+
 ul {
     list-style: none;
     padding-left: 0;

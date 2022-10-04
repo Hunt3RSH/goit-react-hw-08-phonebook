@@ -1,9 +1,9 @@
-export const themeLight = {
+export const theme = {
   colors: {
     black: '#000',
     white: '#fff',
     text: '#2a2a2a',
-    background: '#fff',
+    background: 'rgba(0, 0, 0, 0.7)',
     primary: '#07c',
     secondary: '#05a',
     accent: 'tomato',
