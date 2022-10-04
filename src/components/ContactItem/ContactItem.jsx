@@ -9,6 +9,7 @@ import { UpdateUserForm } from './UpdateContactItem/UpdateContactItem';
 import { getContacts } from 'redux/contacts/selectors';
 import { useState } from 'react';
 import { AvatarContact, AvatarWrapper } from './ContactItem.styled';
+import { CardNumber } from 'components/ContactList/ContactList.styled';
 
 export default function ContactItem({ id, name, number }) {
   const [userToUpdate, setUserToUpdate] = useState(null);
@@ -35,9 +36,7 @@ export default function ContactItem({ id, name, number }) {
         <Typography gutterBottom variant="h5" component="div">
           {name}
         </Typography>
-        <Typography variant="h5" color="text.secondary">
-          {number}
-        </Typography>
+        <CardNumber href={'tel:' + number}>{number}</CardNumber>
       </CardContent>
       <CardActions>
         <Button

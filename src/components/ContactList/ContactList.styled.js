@@ -35,3 +35,15 @@ export const CartStyle = styled(Card)`
   width: 100%;
   border-radius: 40px 10px 40px 10px !important;
 `;
+
+export const CardNumber = styled.a`
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 25px;
+  color: gray;
+  transition: all 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  &:hover,
+  &:focus {
+    color: #ffb21b;
+  }
+`;
