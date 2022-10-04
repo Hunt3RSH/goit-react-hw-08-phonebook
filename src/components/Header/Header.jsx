@@ -1,6 +1,5 @@
 import { StyledContainer } from 'components/ContactForm/ContactForm.styled';
 import Navbar from 'react-bootstrap/Navbar';
-import LogoBook from '../../img/logoBook.png';
 import { Nav } from 'react-bootstrap';
 import { Button } from '@mui/material';
 import {
@@ -12,11 +11,11 @@ import {
 import { getToken } from 'redux/authUsers/authSelectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from 'redux/authUsers/authOperations';
+import LogoBook from '../../img/logoBook.png';
 
 export const Header = () => {
   const expand = 'md';
   const isLogin = useSelector(getToken);
-  console.log(isLogin);
 
   const dispatch = useDispatch();
   return (
